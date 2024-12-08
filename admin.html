@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBAC Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>RBAC Admin Dashboard</h1>
+    </header>
+
+    <main>
+        <section id="management">
+            <h2>Management</h2>
+            <button id="add-user-btn">Add User</button>
+            <button id="add-role-btn">Add Role</button>
+            <table id="main-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name/Email</th>
+                        <th>Role/Permissions</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows for users and roles will be dynamically added here -->
+                    <tr>
+                        <td>1</td>
+                        <td>Kumar Harshit (kumarharshit@kh.com)</td>
+                        <td>Admin</td>
+                        <td>Active</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Kumar Ayush (kumarayush@kh.com)</td>
+                        <td>Editor</td>
+                        <td>Inactive</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Raja (raja@kh.com)</td>
+                        <td>Role: Manager</td>
+                        <td>Permissions: Read, Write, Delete</td>
+                        <td>-</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal-container" class="hidden">
+        <div id="modal">
+            <h3 id="modal-title">Add User</h3>
+            <form id="modal-form">
+                <div id="modal-fields">
+                    <!-- Form fields will be dynamically added here -->
+                    <label>Name: <input type="text" id="user-name" placeholder="Enter name" required></label>
+                    <label>Email: <input type="email" id="user-email" placeholder="Enter email" required></label>
+                    <label>Role: 
+                        <select id="user-role">
+                            <option value="admin">Admin</option>
+                            <option value="editor">Editor</option>
+                            <option value="viewer">Viewer</option>
+                        </select>
+                    </label>
+                </div>
+                <button type="submit">Save</button>
+                <button type="button" id="close-modal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
